@@ -4,7 +4,7 @@ $app->post('/api/Spotify/getRecomendationPlaylist', function ($request, $respons
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken', 'seedArtists', 'seedGenres']);
+    $validateRes = $checkRequest->validate($request, ['accessToken', 'seedArtists', 'seedGenres', 'seedTracks']);
 
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
@@ -19,8 +19,11 @@ $app->post('/api/Spotify/getRecomendationPlaylist', function ($request, $respons
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
+    $data['seed_artists'] = \Models\Params::toString($data['seed_artists'], ',');
+    $data['seed_genres'] = \Models\Params::toString($data['seed_genres'], ',');
+    $data['seed_tracks'] = \Models\Params::toString($data['seed_tracks'], ',');
 
-    
+
 
     $client = $this->httpClient;
     $query_str = "https://api.spotify.com/v1/recommendations";
