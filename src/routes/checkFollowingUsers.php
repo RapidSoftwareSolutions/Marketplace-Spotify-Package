@@ -22,7 +22,7 @@ $app->post('/api/Spotify/checkFollowingUsers', function ($request, $response) {
 
     
     $data['ids'] = \Models\Params::toString($data['ids'], ','); 
-    $data['type'] = 'user'; 
+    $data['type'] = 'user';
 
     $client = $this->httpClient;
     $query_str = "https://api.spotify.com/v1/me/following";

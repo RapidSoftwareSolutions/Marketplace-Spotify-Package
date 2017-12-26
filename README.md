@@ -249,13 +249,6 @@ Check to see if the current user is following one or more artists
 | accessToken| String| accessToken from user
 | artistIds  | List  | Id of the artist
 
-## Spotify.checkFollowingUsers
-Check to see if the current user is following one or more Spotify users
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| accessToken from user
-| userIds    | List  | Id of the user
 
 ## Spotify.followPlaylist
 Add the current user as a follower of a playlist.

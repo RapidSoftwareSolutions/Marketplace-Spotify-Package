@@ -498,7 +498,7 @@
                 },
                 {
                     "name": "timestamp",
-                    "type": "DatePIcker",
+                    "type": "DatePicker",
                     "info": "A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss",
                     "required": false
                 }
@@ -784,6 +784,51 @@
                     "required": true
                 },
                 {
+                    "name": "seedArtists",
+                    "type": "List",
+                    "structure": {
+                        "name": "seedArtist",
+                        "type": "String",
+                        "info": "Single seedArtist"
+                    },
+                    "info": "Id of the seed artists",
+                    "required": true,
+                    "vendorSchema": {
+                        "format": "toString:{,}",
+                        "name": "seed_artists"
+                    }
+                },
+                {
+                    "name": "seedGenres",
+                    "type": "List",
+                    "structure": {
+                        "name": "seedGenre",
+                        "type": "String",
+                        "info": "Single seedGenre"
+                    },
+                    "info": "Id of the seed artists",
+                    "required": true,
+                    "vendorSchema": {
+                        "format": "toString:{,}",
+                        "name": "seed_genres"
+                    }
+                },
+                {
+                    "name": "seedTracks",
+                    "type": "List",
+                    "structure": {
+                        "name": "seedTrack",
+                        "type": "String",
+                        "info": "Single seedTrack"
+                    },
+                    "info": "Id of the seed artists",
+                    "required": true,
+                    "vendorSchema": {
+                        "format": "toString:{,}",
+                        "name": "seed_tracks"
+                    }
+                },
+                {
                     "name": "limit",
                     "type": "Number",
                     "info": "The target size of the list of recommended tracks.",
@@ -800,7 +845,7 @@
                     "type": "String",
                     "info": "A confidence measure from 0.0 to 1.0 of whether the track is acoustic.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_acousticness"
                     }
                 },
@@ -809,7 +854,7 @@
                     "type": "String",
                     "info": "A confidence measure from 0.0 to 1.0 of whether the track is acoustic.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_acousticness"
                     }
                 },
@@ -818,7 +863,7 @@
                     "type": "String",
                     "info": "A confidence measure from 0.0 to 1.0 of whether the track is acoustic.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_acousticness"
                     }
                 },
@@ -827,7 +872,7 @@
                     "type": "String",
                     "info": "Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_danceability"
                     }
                 },
@@ -836,7 +881,7 @@
                     "type": "String",
                     "info": "Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_danceability"
                     }
                 },
@@ -845,7 +890,7 @@
                     "type": "String",
                     "info": "Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_danceability"
                     }
                 },
@@ -854,7 +899,7 @@
                     "type": "Number",
                     "info": "The duration of the track in milliseconds.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_duration_ms"
                     }
                 },
@@ -863,7 +908,7 @@
                     "type": "Number",
                     "info": "The duration of the track in milliseconds.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_duration_ms"
                     }
                 },
@@ -872,7 +917,7 @@
                     "type": "Number",
                     "info": "The duration of the track in milliseconds.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_duration_ms"
                     }
                 },
@@ -881,7 +926,7 @@
                     "type": "String",
                     "info": "Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_energy"
                     }
                 },
@@ -890,7 +935,7 @@
                     "type": "String",
                     "info": "Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_energy"
                     }
                 },
@@ -899,7 +944,7 @@
                     "type": "String",
                     "info": "Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_energy"
                     }
                 },
@@ -908,7 +953,7 @@
                     "type": "String",
                     "info": "Predicts whether a track contains no vocals. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_instrumentalness"
                     }
                 },
@@ -917,7 +962,7 @@
                     "type": "String",
                     "info": "Predicts whether a track contains no vocals. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_instrumentalness"
                     }
                 },
@@ -926,7 +971,7 @@
                     "type": "String",
                     "info": "Predicts whether a track contains no vocals. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_instrumentalness"
                     }
                 },
@@ -935,7 +980,7 @@
                     "type": "Number",
                     "info": "The key the track is in. Integers map to pitches using standard Pitch Class notation.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_key"
                     }
                 },
@@ -944,7 +989,7 @@
                     "type": "Number",
                     "info": "The key the track is in. Integers map to pitches using standard Pitch Class notation.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_key"
                     }
                 },
@@ -953,7 +998,7 @@
                     "type": "Number",
                     "info": "The key the track is in. Integers map to pitches using standard Pitch Class notation.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_key"
                     }
                 },
@@ -962,7 +1007,7 @@
                     "type": "String",
                     "info": "Detects the presence of an audience in the recording. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_liveness"
                     }
                 },
@@ -971,7 +1016,7 @@
                     "type": "String",
                     "info": "Detects the presence of an audience in the recording. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_liveness"
                     }
                 },
@@ -980,7 +1025,7 @@
                     "type": "String",
                     "info": "Detects the presence of an audience in the recording. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_liveness"
                     }
                 },
@@ -989,7 +1034,7 @@
                     "type": "String",
                     "info": "The overall loudness of a track in decibels (dB). ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_loudness"
                     }
                 },
@@ -998,7 +1043,7 @@
                     "type": "String",
                     "info": "The overall loudness of a track in decibels (dB). ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_loudness"
                     }
                 },
@@ -1007,7 +1052,7 @@
                     "type": "String",
                     "info": "The overall loudness of a track in decibels (dB). ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_loudness"
                     }
                 },
@@ -1020,7 +1065,7 @@
                     ],
                     "info": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "mode"
                     }
                 },
@@ -1029,7 +1074,7 @@
                     "type": "Number",
                     "info": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_popularity"
                     }
                 },
@@ -1038,7 +1083,7 @@
                     "type": "Number",
                     "info": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_popularity"
                     }
                 },
@@ -1047,7 +1092,7 @@
                     "type": "Number",
                     "info": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_popularity"
                     }
                 },
@@ -1056,7 +1101,7 @@
                     "type": "String",
                     "info": "Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_speechiness"
                     }
                 },
@@ -1065,7 +1110,7 @@
                     "type": "String",
                     "info": "Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_speechiness"
                     }
                 },
@@ -1074,7 +1119,7 @@
                     "type": "String",
                     "info": "Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_speechiness"
                     }
                 },
@@ -1083,7 +1128,7 @@
                     "type": "String",
                     "info": "The overall estimated tempo of a track in beats per minute (BPM).",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_tempo"
                     }
                 },
@@ -1092,7 +1137,7 @@
                     "type": "String",
                     "info": "The overall estimated tempo of a track in beats per minute (BPM).",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_tempo"
                     }
                 },
@@ -1101,7 +1146,7 @@
                     "type": "String",
                     "info": "The overall estimated tempo of a track in beats per minute (BPM).",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_tempo"
                     }
                 },
@@ -1110,7 +1155,7 @@
                     "type": "String",
                     "info": "An estimated overall time signature of a track. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_time_signature"
                     }
                 },
@@ -1119,7 +1164,7 @@
                     "type": "String",
                     "info": "An estimated overall time signature of a track. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_time_signature"
                     }
                 },
@@ -1128,7 +1173,7 @@
                     "type": "String",
                     "info": "An estimated overall time signature of a track. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_time_signature"
                     }
                 },
@@ -1137,7 +1182,7 @@
                     "type": "String",
                     "info": "A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "max_valence"
                     }
                 },
@@ -1146,7 +1191,7 @@
                     "type": "String",
                     "info": "A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "min_valence"
                     }
                 },
@@ -1155,7 +1200,7 @@
                     "type": "String",
                     "info": "A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. ",
                     "required": false,
-                    "vendorShema": {
+                    "vendorSchema": {
                         "name": "target_valence"
                     }
                 }
@@ -1167,6 +1212,8 @@
                     {
                         "type": "query",
                         "parameters": [
+                            "seed_genres",
+                            "seed_artists",
                             "max_valence",
                             "min_valence",
                             "target_valence",
@@ -1256,7 +1303,7 @@
                         "artist"
                     ],
                     "info": "The ID type: currently only artist is supported.",
-                    "required": false
+                    "required": true
                 }
             ],
             "vendorRequest": {
@@ -1552,59 +1599,7 @@
                 }
             ]
         },
-        {
-            "name": "checkFollowingUsers",
-            "description": "Check to see if the current user is following one or more Spotify users",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "String",
-                    "info": "accessToken from user",
-                    "required": true
-                },
-                {
-                    "name": "userIds",
-                    "type": "List",
-                    "structure": {
-                        "name": "userId",
-                        "type": "String",
-                        "info": "Single userId"
-                    },
-                    "info": "Id of the user",
-                    "required": true,
-                    "vendorSchema": {
-                        "format": "toString:{,}",
-                        "name": "ids"
-                    }
-                }
-            ],
-            "vendorRequest": {
-                "url": "https:\/\/api.spotify.com\/v1\/me\/following",
-                "method": "get",
-                "requestParameters": [
-                    {
-                        "type": "query",
-                        "parameters": [
-                            "ids",
-                            "type"
-                        ]
-                    }
-                ],
-                "headers": {
-                    "Authorization": "Bearer {$data['accessToken']}"
-                }
-            },
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
+
         {
             "name": "followPlaylist",
             "description": "Add the current user as a follower of a playlist.",
