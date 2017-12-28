@@ -46,7 +46,7 @@ $app->post('/api/Spotify/getRecomendationPlaylist', function ($request, $respons
             }
         } else {
             $result['callback'] = 'error';
-            $result['contextWrites']['to']['status_code'] = 'API_ERROR';
+            $result['contextWrites']['to']['status_code'] = 'API_ERROR!';
             $result['contextWrites']['to']['status_msg'] = json_decode($responseBody);
         }
 
@@ -59,7 +59,7 @@ $app->post('/api/Spotify/getRecomendationPlaylist', function ($request, $respons
             $out = json_decode($responseBody);
         }
         $result['callback'] = 'error';
-        $result['contextWrites']['to']['status_code'] = 'API_ERROR';
+        $result['contextWrites']['to']['status_code'] = 'API_ERROR!';
         $result['contextWrites']['to']['status_msg'] = $out;
 
     } catch (GuzzleHttp\Exception\ServerException $exception) {
@@ -71,7 +71,7 @@ $app->post('/api/Spotify/getRecomendationPlaylist', function ($request, $respons
             $out = json_decode($responseBody);
         }
         $result['callback'] = 'error';
-        $result['contextWrites']['to']['status_code'] = 'API_ERROR';
+        $result['contextWrites']['to']['status_code'] = 'API_ERROR!';
         $result['contextWrites']['to']['status_msg'] = $out;
 
     } catch (GuzzleHttp\Exception\ConnectException $exception) {
