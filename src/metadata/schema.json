@@ -806,7 +806,7 @@
                         "type": "String",
                         "info": "Single seedGenre"
                     },
-                    "info": "Id of the seed artists",
+                    "info": "Id of the seed genres",
                     "required": true,
                     "vendorSchema": {
                         "format": "toString:{,}",
@@ -821,7 +821,7 @@
                         "type": "String",
                         "info": "Single seedTrack"
                     },
-                    "info": "Id of the seed artists",
+                    "info": "Id of the seed tracks",
                     "required": true,
                     "vendorSchema": {
                         "format": "toString:{,}",

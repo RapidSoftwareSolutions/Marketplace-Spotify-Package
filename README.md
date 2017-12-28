@@ -155,8 +155,8 @@ Create a playlist-style listening experience based on seed artists, tracks and g
 |-----------------------|-------|----------
 | accessToken           | String| accessToken from user
 | seedArtists           | List  | Id of the seed artists
-| seedGenres            | List  | Id of the seed artists
-| seedTracks            | List  | Id of the seed artists
+| seedGenres            | List  | Id of the seed genres
+| seedTracks            | List  | Id of the seed tracks
 | limit                 | Number| The target size of the list of recommended tracks.
 | market                | String| An ISO 3166-1 alpha-2 country code.
 | maxAcousticness       | String| A confidence measure from 0.0 to 1.0 of whether the track is acoustic.
