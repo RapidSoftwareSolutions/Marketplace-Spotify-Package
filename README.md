@@ -10,8 +10,6 @@ Web API lets your applications fetch data from the Spotify music catalog and man
 1. Register or log in
 2. Browse to [Dashboard](https://beta.developer.spotify.com/dashboard/) to get your clientId
 
-
-
 ## Custom datatypes: 
  |Datatype|Description|Example
  |--------|-----------|----------
@@ -106,7 +104,7 @@ Get a list of Spotify featured playlists
 | offset     | Number    | The index of the first item to return. Default: 0 (the first object). Use with limit to get the next set of items.
 | locale     | String    | The desired language, consisting of a lowercase ISO 639 language code and an uppercase ISO 3166-1 alpha-2 country code, joined by an underscore. 
 | country    | String    | An ISO 3166-1 alpha-2 country code.
-| timestamp  | DatePIcker| A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss
+| timestamp  | DatePicker| A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss
 
 ## Spotify.listNewReleases
 Get a list of new album releases featured in Spotify
@@ -156,6 +154,9 @@ Create a playlist-style listening experience based on seed artists, tracks and g
 | Field                 | Type  | Description
 |-----------------------|-------|----------
 | accessToken           | String| accessToken from user
+| seedArtists           | List  | Id of the seed artists
+| seedGenres            | List  | Id of the seed artists
+| seedTracks            | List  | Id of the seed artists
 | limit                 | Number| The target size of the list of recommended tracks.
 | market                | String| An ISO 3166-1 alpha-2 country code.
 | maxAcousticness       | String| A confidence measure from 0.0 to 1.0 of whether the track is acoustic.
@@ -248,7 +249,6 @@ Check to see if the current user is following one or more artists
 |------------|-------|----------
 | accessToken| String| accessToken from user
 | artistIds  | List  | Id of the artist
-
 
 ## Spotify.followPlaylist
 Add the current user as a follower of a playlist.
