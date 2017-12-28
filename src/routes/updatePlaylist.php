@@ -15,11 +15,10 @@ $app->post('/api/Spotify/updatePlaylist', function ($request, $response) {
     $requiredParams = ['accessToken'=>'accessToken','userId'=>'userId','playlistId'=>'playlistId'];
     $optionalParams = ['name'=>'name','public'=>'public','collaborative'=>'collaborative','description'=>'description'];
     $bodyParams = [
-       'query' => ['name','public','collaborative','desciption']
+       'json' => ['name','public','collaborative','desciption']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
-
     
 
     $client = $this->httpClient;

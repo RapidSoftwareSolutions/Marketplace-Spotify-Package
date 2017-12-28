@@ -4,7 +4,7 @@ $app->post('/api/Spotify/search', function ($request, $response) {
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken','q']);
+    $validateRes = $checkRequest->validate($request, ['accessToken','q', 'type']);
 
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);

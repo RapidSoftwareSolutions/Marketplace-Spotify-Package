@@ -20,9 +20,6 @@ $app->post('/api/Spotify/removeTracksFromPlaylist', function ($request, $respons
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
-    
-    $data['tracks'] = \Models\Params::toString($data['tracks'], ','); 
-
     $client = $this->httpClient;
     $query_str = "https://api.spotify.com/v1/users/{$data['userId']}/playlists/{$data['playlistId']}/tracks";
 

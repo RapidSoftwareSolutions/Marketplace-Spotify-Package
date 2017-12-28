@@ -3704,7 +3704,7 @@
                 "method": "put",
                 "requestParameters": [
                     {
-                        "type": "query",
+                        "type": "json",
                         "parameters": [
                             "name",
                             "public",
@@ -3834,7 +3834,7 @@
                         "info": "Single type"
                     },
                     "info": "A list of item types to search across. ",
-                    "required": false,
+                    "required": true,
                     "vendorSchema": {
                         "format": "toString:{,}"
                     }
