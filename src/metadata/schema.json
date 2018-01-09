@@ -392,7 +392,7 @@
                     "name": "country",
                     "type": "String",
                     "info": "An ISO 3166-1 alpha-2 country code.",
-                    "required": false
+                    "required": true
                 }
             ],
             "vendorRequest": {
@@ -500,7 +500,10 @@
                     "name": "timestamp",
                     "type": "DatePicker",
                     "info": "A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss",
-                    "required": false
+                    "required": false,
+                    "vendorSchema":{
+                        "format":"toFormat:{Y-m-dTH:m:i}"
+                    }
                 }
             ],
             "vendorRequest": {
@@ -712,7 +715,7 @@
         },
         {
             "name": "getSingleCategoryPlaylists",
-            "description": "Get a single category used to tag items in Spotify ",
+            "description": "Get a list of Spotify playlists tagged with a particular category.",
             "args": [
                 {
                     "name": "accessToken",
@@ -3646,7 +3649,7 @@
         },
         {
             "name": "updatePlaylist",
-            "description": "Replace all the tracks in a playlist, overwriting its existing tracks.",
+            "description": "Change a playlist’s name and public/private state. ",
             "args": [
                 {
                     "name": "accessToken",

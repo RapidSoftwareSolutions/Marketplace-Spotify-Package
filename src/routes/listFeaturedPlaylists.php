@@ -19,8 +19,10 @@ $app->post('/api/Spotify/listFeaturedPlaylists', function ($request, $response) 
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
-
-    
+    if (isset($post_data['args']['timestamp']) && (strlen($post_data['args']['timestamp'])>0)){
+        $dateTime = new DateTime($post_data['args']['timestamp']);
+        $data['timestamp'] = $dateTime->format('Y-m-d\TH:m:i');
+    }
 
     $client = $this->httpClient;
     $query_str = "https://api.spotify.com/v1/browse/featured-playlists";

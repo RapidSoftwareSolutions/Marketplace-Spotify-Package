@@ -19,7 +19,11 @@ $app->post('/api/Spotify/followPlaylist', function ($request, $response) {
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
-
+    if ($post_data['args']['public'] == "true"){
+        $data['public'] = true;
+    } elseif ($post_data['args']['public'] == "false"){
+        $data['public'] = false;
+    }
     
 
     $client = $this->httpClient;

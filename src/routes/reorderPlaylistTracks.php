@@ -18,18 +18,19 @@ $app->post('/api/Spotify/reorderPlaylistTracks', function ($request, $response) 
        'json' => ['range_start','range_length','insert_before','snapshot_id']
     ];
 
+
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
     
 
     $client = $this->httpClient;
     $query_str = "https://api.spotify.com/v1/users/{$data['userId']}/playlists/{$data['playlistId']}/tracks";
+    $data['range_start'] = (int) $data['range_start'];
+    $data['insert_before'] = (int) $data['insert_before'];
 
-    
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
     $requestParams['headers'] = ["Authorization"=>"Bearer {$data['accessToken']}"];
-     
 
     try {
         $resp = $client->put($query_str, $requestParams);

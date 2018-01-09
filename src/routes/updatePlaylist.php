@@ -19,8 +19,17 @@ $app->post('/api/Spotify/updatePlaylist', function ($request, $response) {
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
-    
+    if ($post_data['args']['collaborative'] == "true"){
+        $data['collaborative'] = true;
+    } elseif ($post_data['args']['collaborative'] == "false"){
+        $data['collaborative'] = false;
+    }
 
+    if ($post_data['args']['public'] == "true"){
+        $data['public'] = true;
+    } elseif ($post_data['args']['public'] == "false"){
+        $data['public'] = false;
+    }
     $client = $this->httpClient;
     $query_str = "https://api.spotify.com/v1/users/{$data['userId']}/playlists/{$data['playlistId']}";
 

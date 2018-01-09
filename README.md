@@ -138,7 +138,8 @@ Get a single category used to tag items in Spotify
 | country    | String| An ISO 3166-1 alpha-2 country code.
 
 ## Spotify.getSingleCategoryPlaylists
-Get a single category used to tag items in Spotify 
+Get a list of Spotify playlists tagged with a particular category.
+ 
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -580,7 +581,7 @@ Replace all the tracks in a playlist, overwriting its existing tracks.
 | uris       | List  | A list of Spotify track URIs to add.
 
 ## Spotify.updatePlaylist
-Replace all the tracks in a playlist, overwriting its existing tracks.
+Change a playlist’s name and public/private state. .
 
 | Field        | Type  | Description
 |--------------|-------|----------
